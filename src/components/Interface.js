@@ -4,9 +4,13 @@ const Interface = () => {
   const defaultCurrency = "USD";
   const [currencyList, setCurrencyList] = useState([]);
   const [haveCurrency, setHaveCurrency] = useState(defaultCurrency);
+  const [targetCurrency, setTargetCurrency] = useState(defaultCurrency);
   const [rates, setRates] = useState([]);
+  const [input, setInput] = useState(0);
+  const [haveAmount, setHaveAmount] = useState(0);
+  const [result, setResult] = useState();
 
-  //currencyList
+  //setCurrencyList
   useEffect(
     () =>
       fetch(
@@ -28,7 +32,7 @@ const Interface = () => {
     []
   );
 
-  //haveCurrency
+  //setRates
   useEffect(() => {
     fetch(
       `https://exchangerate-api.p.rapidapi.com/rapid/latest/${haveCurrency}`,
@@ -47,9 +51,33 @@ const Interface = () => {
       .catch(console.error);
   }, [haveCurrency]);
 
+  //setResult
+  useEffect(
+    () => setResult(haveAmount * rates[targetCurrency]),
+    [haveAmount, targetCurrency, haveCurrency, rates]
+  );
+
+  //setHaveCurrency
   const selectHandler = (e) => {
     const selectedIndex = e.target.selectedIndex;
     setHaveCurrency(e.target.options[selectedIndex].value);
+  };
+
+  //setInput
+  const inputHandler = (e) => {
+    setInput(e.target.value);
+  };
+
+  //setHaveAmount
+  const buttonHandler = (e) => {
+    e.preventDefault();
+    setHaveAmount(input);
+  };
+
+  //setTargetCurrency
+  const resultHandler = (e) => {
+    const selectedIndex = e.target.selectedIndex;
+    setTargetCurrency(e.target.options[selectedIndex].value);
   };
 
   return (
@@ -65,12 +93,19 @@ const Interface = () => {
             ))}
           </select>
         </form>
+        <input
+          onChange={inputHandler}
+          value={input}
+          type="number"
+          step={0.01}
+          min={0}
+        ></input>
+        <button onClick={buttonHandler}>OK</button>
       </div>
-      <input type="number" defaultValue={0} step={0.01} min={0}></input>
       <div>
         <h3>The currency you want to convert to:</h3>
         <form action="*">
-          <select name="select">
+          <select name="select" onChange={resultHandler}>
             {currencyList.map((el) => (
               <option key={el} value={el}>
                 {el}
@@ -79,7 +114,7 @@ const Interface = () => {
           </select>
         </form>
       </div>
-      <input value={rates.haveCurrency}></input>
+      <p>{result}</p>
     </section>
   );
 };
