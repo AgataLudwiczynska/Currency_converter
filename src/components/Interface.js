@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+//components
+import Form_OwnedData from "./Form_OwnedData";
+import TargetData from "./TargetData";
 
 const Interface = () => {
   const defaultCurrency = "USD";
@@ -82,39 +85,18 @@ const Interface = () => {
 
   return (
     <section>
-      <div>
-        <h3>The currency you have:</h3>
-        <form action="*">
-          <select name="select" onChange={selectHandler}>
-            {currencyList.map((el) => (
-              <option key={el} value={el}>
-                {el}
-              </option>
-            ))}
-          </select>
-        </form>
-        <input
-          onChange={inputHandler}
-          value={input}
-          type="number"
-          step={0.01}
-          min={0}
-        ></input>
-        <button onClick={buttonHandler}>OK</button>
-      </div>
-      <div>
-        <h3>The currency you want to convert to:</h3>
-        <form action="*">
-          <select name="select" onChange={resultHandler}>
-            {currencyList.map((el) => (
-              <option key={el} value={el}>
-                {el}
-              </option>
-            ))}
-          </select>
-        </form>
-      </div>
-      <p>{result}</p>
+      <Form_OwnedData
+        currencyList={currencyList}
+        input={input}
+        changeHandler={selectHandler}
+        inputHandler={inputHandler}
+        buttonHandler={buttonHandler}
+      />
+      <TargetData
+        currencyList={currencyList}
+        result={result}
+        changeHandler={resultHandler}
+      />
     </section>
   );
 };
