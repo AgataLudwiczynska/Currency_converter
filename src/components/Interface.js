@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import useCurrency from "../hooks/useCurrency";
 //components
 import Form_OwnedData from "./Form_OwnedData";
 import TargetData from "./TargetData";
 
 const Interface = () => {
   const defaultCurrency = "USD";
+  const [haveCurrency, changeHaveCurrency] = useCurrency(defaultCurrency);
+  const [targetCurrency, changeTargetCurrency] = useCurrency(defaultCurrency);
   const [currencyList, setCurrencyList] = useState([]);
-  const [haveCurrency, setHaveCurrency] = useState(defaultCurrency);
-  const [targetCurrency, setTargetCurrency] = useState(defaultCurrency);
   const [rates, setRates] = useState([]);
   const [input, setInput] = useState(0);
   const [haveAmount, setHaveAmount] = useState(0);
@@ -60,12 +61,6 @@ const Interface = () => {
     [haveAmount, targetCurrency, haveCurrency, rates]
   );
 
-  //setHaveCurrency
-  const selectHandler = (e) => {
-    const selectedIndex = e.target.selectedIndex;
-    setHaveCurrency(e.target.options[selectedIndex].value);
-  };
-
   //setInput
   const inputHandler = (e) => {
     setInput(e.target.value);
@@ -77,25 +72,19 @@ const Interface = () => {
     setHaveAmount(input);
   };
 
-  //setTargetCurrency
-  const resultHandler = (e) => {
-    const selectedIndex = e.target.selectedIndex;
-    setTargetCurrency(e.target.options[selectedIndex].value);
-  };
-
   return (
     <section>
       <Form_OwnedData
         currencyList={currencyList}
         input={input}
-        changeHandler={selectHandler}
+        changeHandler={changeHaveCurrency}
         inputHandler={inputHandler}
         buttonHandler={buttonHandler}
       />
       <TargetData
         currencyList={currencyList}
         result={result}
-        changeHandler={resultHandler}
+        changeHandler={changeTargetCurrency}
       />
     </section>
   );
