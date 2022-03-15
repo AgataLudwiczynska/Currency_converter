@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useCurrency from "../hooks/useCurrency";
+
 //components
-import Form_OwnedData from "./Form_OwnedData";
-import TargetData from "./TargetData";
+import Currency from "./Currency";
+import Form from "./Form";
 
 const Interface = () => {
   const defaultCurrency = "USD";
@@ -74,18 +75,20 @@ const Interface = () => {
 
   return (
     <section>
-      <Form_OwnedData
+      <h1>Currency Converter</h1>
+      <Currency
         currencyList={currencyList}
-        input={input}
-        changeHandler={changeHaveCurrency}
-        inputHandler={inputHandler}
-        buttonHandler={buttonHandler}
+        changeHaveCurrency={changeHaveCurrency}
+        changeTargetCurrency={changeTargetCurrency}
       />
-      <TargetData
-        currencyList={currencyList}
-        result={result}
-        changeHandler={changeTargetCurrency}
-      />
+      <div>
+        <Form
+          input={input}
+          inputHandler={inputHandler}
+          buttonHandler={buttonHandler}
+        />
+        <p>{result}</p>
+      </div>
     </section>
   );
 };
