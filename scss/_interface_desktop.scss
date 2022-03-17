@@ -1,0 +1,29 @@
+$font-size-elements: 2vw;
+
+@media screen and (min-device-width: 700px) and (orientation: landscape) {
+  .interface {
+    width: 60vw;
+    .section-header {
+      font-size: 5vw;
+    }
+    .currency {
+      font-size: $font-size-elements;
+      select {
+        font-size: $font-size-elements;
+      }
+    }
+    .form {
+      input,
+      button,
+      p {
+        font-size: $font-size-elements;
+      }
+      input {
+        width: 15vw;
+      }
+      p {
+        min-width: 15vw;
+      }
+    }
+  }
+}

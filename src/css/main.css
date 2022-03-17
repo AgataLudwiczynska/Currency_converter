@@ -83,6 +83,32 @@
   min-width: 20vw;
 }
 
+@media screen and (min-device-width: 700px) and (orientation: landscape) {
+  .interface {
+    width: 60vw;
+  }
+  .interface .section-header {
+    font-size: 5vw;
+  }
+  .interface .currency {
+    font-size: 2vw;
+  }
+  .interface .currency select {
+    font-size: 2vw;
+  }
+  .interface .form input,
+  .interface .form button,
+  .interface .form p {
+    font-size: 2vw;
+  }
+  .interface .form input {
+    width: 15vw;
+  }
+  .interface .form p {
+    min-width: 15vw;
+  }
+}
+
 body {
   height: 100vh;
   background-color: #fafdff;
