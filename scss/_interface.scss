@@ -1,0 +1,56 @@
+$font-size-elements: 5vw;
+@mixin elements {
+  padding: 1vw 1.2vw;
+  font-size: $font-size-elements;
+  text-align: center;
+}
+
+.interface {
+  display: flex;
+  width: 90vw;
+  margin: 5% auto;
+  padding: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+  background-color: $background-second-color;
+  border-radius: $radius-big-component;
+
+  .section-header {
+    font-size: 8vw;
+  }
+
+  .currency {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    font-size: $font-size-elements;
+    padding: 1vw 1.2vw;
+    select {
+      font-size: $font-size-elements;
+      padding: 1vw 1.2vw;
+    }
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    input {
+      @include elements();
+      width: 20vw;
+    }
+    button {
+      @include elements();
+      color: $accent-color;
+      padding: 1vw 1.2vw;
+    }
+    p {
+      @include elements();
+      background-color: $btn_color;
+      border-radius: $radius-elements;
+      min-width: 20vw;
+    }
+  }
+}

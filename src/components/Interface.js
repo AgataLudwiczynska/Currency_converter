@@ -74,14 +74,14 @@ const Interface = () => {
   };
 
   return (
-    <section>
-      <h1>Currency Converter</h1>
+    <section className="interface">
+      <h1 className="section-header">Currency Converter</h1>
       <Currency
         currencyList={currencyList}
         changeHaveCurrency={changeHaveCurrency}
         changeTargetCurrency={changeTargetCurrency}
       />
-      <div>
+      <div className="form">
         <Form
           input={input}
           inputHandler={inputHandler}

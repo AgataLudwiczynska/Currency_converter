@@ -8,7 +8,7 @@ const Currency = ({
   changeTargetCurrency = (f) => f,
 }) => {
   return (
-    <div>
+    <div className="currency">
       <CurrencyList
         currencyList={currencyList}
         changeHandler={changeHaveCurrency}

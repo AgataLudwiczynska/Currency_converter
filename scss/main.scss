@@ -1,0 +1,29 @@
+@import "config";
+@import "interface";
+
+body {
+  height: 100vh;
+  background-color: $background-color;
+  color: $background-color;
+  font-family: $primary-font;
+}
+
+h1 {
+  color: $accent-color;
+  font-family: $header-font;
+}
+
+button,
+input,
+select {
+  background-color: $btn_color;
+  font-family: $primary-font;
+  color: $background-color;
+  border: none;
+  border-radius: $radius-elements;
+  cursor: pointer;
+}
+
+span {
+  color: $accent-color;
+}

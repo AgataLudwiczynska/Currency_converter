@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Fredoka+One&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.interface {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vw;
+  margin: 5% auto;
+  padding: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4vh;
+  background-color: #dae5ee;
+  border-radius: 21px;
+}
+
+.interface .section-header {
+  font-size: 8vw;
+}
+
+.interface .currency {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3vw;
+  font-size: 5vw;
+  padding: 1vw 1.2vw;
+}
+
+.interface .currency select {
+  font-size: 5vw;
+  padding: 1vw 1.2vw;
+}
+
+.interface .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3vw;
+}
+
+.interface .form input {
+  padding: 1vw 1.2vw;
+  font-size: 5vw;
+  text-align: center;
+  width: 20vw;
+}
+
+.interface .form button {
+  padding: 1vw 1.2vw;
+  font-size: 5vw;
+  text-align: center;
+  color: #043457;
+  padding: 1vw 1.2vw;
+}
+
+.interface .form p {
+  padding: 1vw 1.2vw;
+  font-size: 5vw;
+  text-align: center;
+  background-color: #b7cadb;
+  border-radius: 9px;
+  min-width: 20vw;
+}
+
+body {
+  height: 100vh;
+  background-color: #fafdff;
+  color: #fafdff;
+  font-family: "Dosis", sans-serif;
+}
+
+h1 {
+  color: #043457;
+  font-family: "Fredoka One", cursive;
+}
+
+button,
+input,
+select {
+  background-color: #b7cadb;
+  font-family: "Dosis", sans-serif;
+  color: #fafdff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+span {
+  color: #043457;
+}
+/*# sourceMappingURL=main.css.map */

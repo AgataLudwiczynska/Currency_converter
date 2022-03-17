@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Fredoka+One&display=swap");
+
+//colors
+$background-color: #fafdff;
+$background-second-color: #dae5ee;
+$accent-color: #043457;
+$btn_color: #b7cadb;
+
+//font-family
+$header-font: "Fredoka One", cursive;
+$primary-font: "Dosis", sans-serif;
+
+//border-radius
+$radius-big-component: 21px;
+$radius-elements: 9px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
